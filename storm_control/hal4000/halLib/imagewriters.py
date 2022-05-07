@@ -127,6 +127,10 @@ class ZarrFile(BaseFileWriter):
         
         dirname = os.path.dirname(self.filename)
         group = dirname+os.sep+os.path.basename(self.filename).split("_")[-1].split(".")[0]
+        
+        import shutil
+        if os.path.exists(group): shutil.rmtree(group)
+        
         root = zarr.open(self.filename, mode='w')
         group = root.create_group(group)
         
@@ -154,7 +158,7 @@ class ZarrFile(BaseFileWriter):
                 inf_fp.write("y_start = 1\n")
                 inf_fp.write("y_end = " + h + "\n")
             inf_fp.close()
-
+        
     def saveFrame(self, frame):
         
         super().saveFrame()

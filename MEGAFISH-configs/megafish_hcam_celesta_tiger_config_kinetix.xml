@@ -444,7 +444,7 @@
                 <z_stage type="string">tiger_controller.z_piezo</z_stage>
                 <parameters>
                     <find_sum>
-                        <step_size type="float">1.0</step_size>
+                        <step_size type="float">2.0</step_size>
                     </find_sum>
                     <locked>
                         <buffer_length type="int">5</buffer_length>
@@ -452,10 +452,10 @@
                     </locked>
                     <scan> <!-- from MF6 -->
                         <minimum_sum type="float">70000</minimum_sum>
-                        <scan_step type="float">0.1</scan_step>
+                        <scan_step type="float">2</scan_step>
                         <offset_threshold type="float">100</offset_threshold>
                     </scan>
-                    <jump_size type="float">0.1</jump_size>
+                    <jump_size type="float">2</jump_size>
                 </parameters>
             </configuration>
         </focuslock>
